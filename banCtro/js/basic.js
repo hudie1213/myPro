@@ -1,6 +1,6 @@
 var Data;
 $.ajax({
-    url: "../d.php",
+    url: "d.php",
     async: false,
     dataType: "json",
     success: function (data) {
@@ -11,7 +11,7 @@ $.ajax({
     }
 });
 
-var n = Data.length / 2 + 1;
+var n = Data.length/2 + 1;
 
 function f() {
     for (i = 1; i < n; i++) {
@@ -23,8 +23,6 @@ function f() {
         $("#imgNav" + i).val(Data[2 * i - 1]);
     }
     n = i
-    $("#banform").append("<input type='submit' class='t'  id='sub' value='提交'>")
-
 }
 
 window.onload = f();

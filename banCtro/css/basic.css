@@ -72,7 +72,23 @@ a{
 	top: 0;
 	width: 80%;
 }
-.basic{
+.article{
+	margin: 60px auto;
+}
+#basic{
+	width: 70%;
+	margin: 20px auto;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+.basic_info{
+	width: 100%;
+}
+.basic_info p{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-content: space-between;
 }
 .tit{
     text-align: center;
@@ -129,7 +145,7 @@ a{
 .inp p .sc:hover {
     background-image: url("../images/but_bjh.png");
 }
-#sub{
+.t{
     width: 150px;
     font-size: 22px;
     line-height: 22px;
