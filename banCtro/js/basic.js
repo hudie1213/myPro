@@ -1,15 +1,30 @@
-var n = 3;
+var Data;
+$.ajax({
+    url: "../d.php",
+    async: false,
+    dataType: "json",
+    success: function (data) {
+        Data = data;
+    },
+    fail: function () {
+        alert("失败啦!")
+    }
+});
+
+var n = Data.length / 2 + 1;
 
 function f() {
-    for (i = 1; i <= n; i++) {
+    for (i = 1; i < n; i++) {
         var input = "<span class='imgNum'>第" + i + "张轮播图</span><input type='text' class='imgUrl' name='imgUrl" + i +
             "' id='imgUrl" + i + "'><input type='text' class='imgNav' name='imgNav" + i + "' id='imgNav" + i +
             "'><span class='sc'>清空</span>"
         $(".inp").append("<p>" + input + "</p>")
-
+        $("#imgUrl" + i).val(Data[2 * i - 2]);
+        $("#imgNav" + i).val(Data[2 * i - 1]);
     }
     n = i
     $("#banform").append("<input type='submit' class='t'  id='sub' value='提交'>")
+
 }
 
 window.onload = f();

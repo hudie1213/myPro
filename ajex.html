@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+	<style type="text/css">
+		body{
+			background: #666;
+			color: #fff;
+		}
+	</style>
+</head>
+
+<body>
+    <p id="myDiv"></p>
+	<form action="" method="post">
+		<p>
+			<input type="" name="" id="url1" value="" />
+			<input type="" name="" id="nav1" value="" />
+			<span></span>
+		</p>
+		<p>
+			<input type="" name="" id="url2" value="" />
+			<input type="" name="" id="nav2" value="" />
+			<span></span>
+		</p>
+		<input type="submit" value=""/>
+	</form>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script>
+        window.onload = function () {
+			var Data;
+            htmlobj = $.ajax({
+                url: "d.php",
+                async: false,
+				dataType: "json",
+				success:function(data){
+					Data=data;
+				},
+				fail:function(){
+					alert("失败啦!")
+				}
+            });
+            $("#myDiv").html(htmlobj.responseText);
+			console.log(Data[0]);
+			for(i=1;i<Data.length/2+1;i++){
+				$("p").eq(i).find("#url"+i).val(Data[2*i-2]);
+				$("p").eq(i).find("#nav"+i).val(Data[2*i-1]);
+			}
+        }
+    </script>
+</body>
+
+</html>
