@@ -47,9 +47,9 @@ function s() {
     } else {
         alert("至少有一张轮播图");
     }
-
 }
 
-$("span").click(function () {
-    $("p").eq($(this).parent().index()).find("input").val("");
+$(".inp p").find("span").click(function () {
+	var index=$(this).parent().index()
+    $(".inp p").eq(index).find("input").val("");
 })

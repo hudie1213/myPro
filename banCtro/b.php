@@ -27,15 +27,27 @@
             </ul>
         </div>
         <div class="ctrol">
-            <div class="basic">
-                <h1 class="tit">轮播图管理系统</h1>
+			<div class="article">
+				<h6 class="tit">基本信息</h6>
+				<form id="basic" actio<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+					<div class="basic_info">
+						<p><label for="name">公司名称：</label><input type="text" name="name" id="name" value="" /></p>
+						<p><label for="phone">手机号码：</label><input type="tel" name="phone" id="phone" value="" /></p>
+						<p><label for="tel">公司座机：</label><input type="tel" name="tel" id="tel" value="" /></p>
+						<p><label for="address">联系地址：</label><input type="text" name="address" id="address" value="" /></p>
+					</div>
+					<input type="submit" class="t" value="提交">
+				</form>
+			</div>-->
+            <div class="article">
+                <h6 class="tit">轮播图管理系统</h6>
                 <div class="butctro">
                     <button onclick="d()">增加一个轮播图</button>
                     <button onclick="s()">减少一个轮播图</button>
                 </div>
                 <form id="banform" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
                     <div class="inp"></div>
-                    <input type='submit' class='t' value='提交'>
+					<input type='submit' class='t'  value='提交'>
                 </form>
             </div>
         </div>
