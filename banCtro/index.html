@@ -1,52 +1,65 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="">
 
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<title>ming</title>
-		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<link rel="stylesheet" href="css/basic.css">
-	</head>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>ming</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/basic.css">
+</head>
 
-	<body>
-		<video style="height: 100%;" autoplay muted loop class="bj_vid">
-			<source src="images/bj.mp4">
-		</video>
+<body>
+    <video style="height: 100%;" autoplay muted loop class="bj_vid">
+        <source src="images/bj.mp4">
+    </video>
 
-		<div class="page">
-			<div class="menu">
-				<div style="height: 100px;width: 100%;">
+    <div class="page">
+        <div class="menu">
+            <div style="height: 100px;width: 100%;">
 
-				</div>
-				<ul>
-					<li>基本信息</li>
-					<li>小程序首页</li>
-					<li>小程序资讯</li>
-				</ul>
-			</div>
-			<div class="ctrol">
-				<div class="basic">
-					<h1 class="tit">轮播图管理系统</h1>
-					<div class="butctro">
-						<button onclick="d()">增加一个轮播图</button>
-						<button onclick="s()">减少一个轮播图</button>
+            </div>
+            <ul>
+                <li>基本信息</li>
+                <li>小程序首页</li>
+                <li>小程序资讯</li>
+            </ul>
+        </div>
+        <div class="ctrol">
+			<div class="article">
+				<h6 class="tit">基本信息</h6>
+				<form id="basic" actio<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+					<div class="basic_info">
+						<p><label for="name">公司名称：</label><input type="text" name="name" id="name" value="" /></p>
+						<p><label for="phone">手机号码：</label><input type="tel" name="tel" id="phone" value="" /></p>
+						<p><label for="tel">公司座机：</label><input type="tel" name="tel" id="tel" value="" /></p>
+						<p><label for="address">联系地址：</label><input type="text" name="address" id="address" value="" /></p>
 					</div>
-					<form id="banform" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
-						<div class="inp"></div>
-
-					</form>
-				</div>
-			</div>
-		</div>
-		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-		<!--<script>-->
-			<!--window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')-->
-		<!--</script>-->
-		<script src="js/basic.js"></script>
-		<script>
-			<?php
+					<input type="submit" class="t" value="提交">
+				</form>
+			</div>-->
+            <div class="article">
+                <h6 class="tit">轮播图管理系统</h6>
+                <div class="butctro">
+                    <button onclick="d()">增加一个轮播图</button>
+                    <button onclick="s()">减少一个轮播图</button>
+                </div>
+                <form id="banform" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+                    <div class="inp"></div>
+					<input type='submit' class='t'  value='提交'>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <!--<script>-->
+    <!--window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')-->
+    <!--</script>-->
+    <script src="js/basic.js"></script>
+    <script>
+        <?php
     $imgUrl1 = $_POST["imgUrl1"];
     $imgNav1 = $_POST["imgNav1"];
     $imgUrl2 = $_POST["imgUrl2"];
@@ -99,7 +112,7 @@
     $re1 = mysqli_query($conn, $sql1);
     $q = "SELECT * FROM img";
     ?>
-		</script>
-	</body>
+    </script>
+</body>
 
 </html>

@@ -13,6 +13,19 @@ ul,ol{
 a{
 	text-decoration: none;
 }
+input{
+	border: 1px solid #f5f5f5;
+	border-radius: 3px;
+	box-shadow: 0 0 5px #f5f5f5;
+	background: none;
+	color: #fff;
+}
+input:hover{
+	background: none;
+}
+input::after{
+	background: none;
+}
 .bj_vid{
     position: fixed;
     right: 0;
@@ -72,13 +85,45 @@ a{
 	top: 0;
 	width: 80%;
 }
-.basic{
+.article{
+	margin: 60px auto;
+}
+#basic{
+	width: 80%;
+	margin-top: 20px;
+	margin-left: 10%;
+	padding-left: 30px;
+	padding-right: 30px;
+	box-sizing: border-box;
+}
+.basic_info{
+	width: 100%;
+}
+.basic_info p{
+	margin: 20px 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-content: flex-start;
+}
+.basic_info p input{
+	width: 50%;
+	padding: 10px;
+	font-size: 14px;
+	line-height: 14px;
+	box-sizing: border-box;
+}
+.basic_info p label{
+	color: #fff;
+	font-size: 18px;
+	padding: 10px 0;
+	margin-right:20px;
 }
 .tit{
     text-align: center;
     font-size: 28px;
     line-height: 28px;
-    margin: 100px auto 0;
+    margin: 100px auto 50px;
     color: #fff;
 }
 #banform {
@@ -108,11 +153,9 @@ a{
 .inp p input {
     width: 35%;
     padding: 5px 10px;
-    font-size: 18px;
-    line-height: 18px;
+    font-size: 14px;
+    line-height: 14px;
     box-sizing: border-box;
-    border: 1px solid #000;
-    border-radius: 3px;
 }
 
 .inp p .sc {
@@ -129,7 +172,7 @@ a{
 .inp p .sc:hover {
     background-image: url("../images/but_bjh.png");
 }
-#sub{
+.t{
     width: 150px;
     font-size: 22px;
     line-height: 22px;
@@ -142,7 +185,6 @@ a{
 .butctro{
     width: 30%;
     margin-left:25%;
-    margin-top: 50px;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
